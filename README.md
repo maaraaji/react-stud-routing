@@ -17,3 +17,9 @@ A descriptive study guide to understanding react routing.
 
 3. Converted the existing components to containers (FullPost, NewPost since they are going to act as seperate Page) also created Posts container inside Blog container. Adjusted the imports accordingly
 ---
+#### commit : [Tutorial] Preparing the project for Routing
+4. Separated Posts section to a separate container. Copied state & selected Post Handlers.
+
+5. Removed .Posts class from Blog.css and created new Posts.css
+
+6. Imported Posts to Blog as / component & Displayed it under navigation bar.
