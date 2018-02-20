@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 // import axios from 'axios';
-import axios from '../../axios';
+import axios from '../../../axios';
 
 import './FullPost.css';
 
 class FullPost extends Component {
-  
+
   state = {
     loadedPost: null
-  }  
-  
+  }
+
   componentDidUpdate() {
     console.log("ComponentDidUpdate()")
     if (this.props.id) {
@@ -24,13 +24,13 @@ class FullPost extends Component {
       }
     }
   }
-  
+
   deletePostHandler = () => {
     axios.delete("/posts/"+this.props.id).then (response => {
       console.log(response);
     });
   }
-  
+
   render () {
     let post = <p style={{textAlign: 'center'}}>Please select a Post!</p>;
     if (this.props.id){

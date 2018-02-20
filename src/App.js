@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
+import { BrowserRouter } from 'react-router-dom'; //named exports must be imported within curly braces {}
 
 import Blog from './containers/Blog/Blog';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Blog />
-      </div>
+      <BrowserRouter>
+        <div className="App">
+          <Blog />
+        </div>
+      </BrowserRouter>
     );
   }
 }
