@@ -41,9 +41,10 @@ A descriptive study guide to understanding react routing.
 ### commit : [Tutorial] Rendering Components for Routes
 10. Routed '/' to the component Posts class imported from Posts.js
 
-11. Example of routes,
-| Recommended | Not Recommended |
-| --- | --- |
-| `<Route path='/' exact render={ () => <h1>Dummy</h1> } />` | `<Route path='/' exact render={ () => <Posts /> } />`|
-| `<Route path='/' exact component={ () => { <Posts/> } } />` | |
-| `<Route path='/' exact component={Posts}/> ` | |
+11. Example of routes
+
+  | Recommended | Not Recommended |
+  | --- | --- |
+  | `<Route path='/' exact render={() => <h1>Dummy</h1>}/>` | `<Route path='/' exact render={() => <Posts/>}/>` |
+  | `<Route path='/' exact component={() => {<Posts/>}}/>` | |
+  | `<Route path='/' exact component={Posts}/> ` | |
