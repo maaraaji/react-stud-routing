@@ -24,7 +24,7 @@ A descriptive study guide to understanding react routing.
 
 6. Imported Posts to Blog as / component & Displayed it under navigation bar.
 ---
-### commit : [Tutorial] Setting Up and Rendering Routes
+#### commit : [Tutorial] Setting Up and Rendering Routes
 7. Import the named export { Route } from react-router-dom to the router component - in our case it is Blog.js.
 
 8. Declare the self closing Route JSX element wherever you need to route something.
@@ -38,7 +38,7 @@ A descriptive study guide to understanding react routing.
   | render | (Optional) Anonymous arrow function that returns JSX of your choice. Not recommended for loading components. Recommended for short info messages|
   | component | This allows us to pass the component that should render with this route. It needs to be reference to a function or class that we want to use. |
 ---
-### commit : [Tutorial] Rendering Components for Routes
+#### commit : [Tutorial] Rendering Components for Routes
 10. Routed '/' to the component Posts class imported from Posts.js
 
 11. Example of routes
@@ -48,3 +48,8 @@ A descriptive study guide to understanding react routing.
   | `<Route path='/' exact render={() => <h1>Dummy</h1>}/>` | `<Route path='/' exact render={() => <Posts/>}/>` |
   | `<Route path='/' exact component={() => {<Posts/>}}/>` | |
   | `<Route path='/' exact component={Posts}/> ` | |
+---
+#### commit : [Tutorial] Switching Between Pages
+12. Created one more route for new-post and routed it to NewPost class in NewPost.js
+
+13. Issue with current routing is whenever the URL routing happens, the react application refreshes and hence previous state & Props are lost. Need to fix this.
