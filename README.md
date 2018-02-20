@@ -72,13 +72,20 @@ A descriptive study guide to understanding react routing.
 15. Need to import the named export ***Link*** from react-router-dom package.
 ---
 #### commit : [Tutorial]  The "withRouter" HOC & Route Props
-16. To get the route information (props) in the component loaded inside route container, there are two ways
-    
+16. To get the route information (props) in the component loaded inside routed container, there are two ways
+
     a. while calling the component, pass the props using spread operetor or pass a prop which match specific prop from router
   `<Post {...props}/>`
   `<Post {path = this.props.pathname}/>`
-    
+
     b. we can use HOC withRouter from react-router-dom and wrap the component that want to learn the route.
   `export default withRouter(post)`
 
 17. This will be helpful to understand the route history (as history is one of the props) and pushing back and forward.
+---
+#### commit : [Tutorial] Absolute vs Relative Paths
+18. Absolute path is the path always attach just to the domain name. Example.,
+`pathname: '/new-post'` --> This will always appends to www.example.com/new-post
+
+19. Relative path is the path that appends to the current available path. Example.,
+if you already passed `/new-post` and you are in new-post component then use `pathname: this.props.match.url +'/first'` --> This will result in www.example.com/new-post/first
