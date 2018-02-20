@@ -69,4 +69,15 @@ A descriptive study guide to understanding react routing.
 | hash | Object. Specific to 'to' Props | To jump to HTML Element with id mentioned to hash |
 | search | Object. Specific to 'to' Props | To pass any query parameters |
 
-15. Need to import the named export *Link* from react-router-dom package.
+15. Need to import the named export ***Link*** from react-router-dom package.
+---
+#### commit : [Tutorial]  The "withRouter" HOC & Route Props
+16. To get the route information (props) in the component loaded inside route container, there are two ways
+  a. while calling the component, pass the props using spread operetor or pass a prop which match specific prop from router
+  `<Post {...props}/>`
+  `<Post {path = this.props.pathname}/>`
+
+  b. we can use HOC withRouter from react-router-dom and wrap the component that want to learn the route.
+  `export default withRouter(post)`
+
+17. This will be helpful to understand the route history (as history is one of the props) and pushing back and forward.
