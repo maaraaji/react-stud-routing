@@ -23,3 +23,16 @@ A descriptive study guide to understanding react routing.
 5. Removed .Posts class from Blog.css and created new Posts.css
 
 6. Imported Posts to Blog as / component & Displayed it under navigation bar.
+---
+### commit : [Tutorial] Setting Up and Rendering Routes
+7. Import the named export { Route } from react-router-dom to the router component - in our case it is Blog.js
+
+8. Declare the self closing Route JSX element wherever you need to route something.
+
+9. Route should pass below props (predefined and must be same as this)
+
+  | Props | Definition |
+  | --- | --- |
+  | path | URL path which should trigger routing to which component. This controls the display of the page |
+  | exact | (Optional) whether the mentioned path should exactly match. If not mentioned, consider the path starts with mentioned chars/words |
+  | render | Anonymous arrow functions that returns JSX of your choice |
