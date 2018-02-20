@@ -53,3 +53,20 @@ A descriptive study guide to understanding react routing.
 12. Created one more route for new-post and routed it to NewPost class in NewPost.js
 
 13. Issue with current routing is whenever the URL routing happens, the react application refreshes and hence previous state & Props are lost. Need to fix this.
+---
+#### commit : [Tutorial] Using Links to Switch Pages without reloading
+14. We can use Link component from react-router-dom instead of anchor tag <a></a>
+
+| Props | Type | Description |
+| --- | --- | --- |
+| to | String, Dynamic JS Object | to direct where it should go to when clicking
+
+| Props | Type | Description |
+| --- | --- | --- |
+| to | String | It can be a simple string like below `<Link to="/">Home</Link>` |
+| to | Dynamic JS Object | It can be dynamic JS Object wrapped by {{}} (First {} to wrap JS OBject & Second {} to wrap the dynamic content) as below `<Link to={{pathname: '/', hash: ''#second', search: '?quick-submit = true'}}`>Home</Link>
+| pathname | Object. Specific to 'to' Props | To direct the link to route |
+| hash | Object. Specific to 'to' Props | To jump to HTML Element with id mentioned to hash |
+| search | Object. Specific to 'to' Props | To pass any query parameters |
+
+15. Need to import the named export *Link* from react-router-dom package.
