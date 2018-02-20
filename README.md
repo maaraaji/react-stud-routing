@@ -6,4 +6,4 @@ A descriptive study guide to understanding react routing.
 |axios package installed|
 |using dummy API - https://jsonplaceholder.typicode.com/|
 
-![Routing] (./Routing.png)
+![Routing] (Routing.svg)
