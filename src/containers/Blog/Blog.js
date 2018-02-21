@@ -5,11 +5,15 @@ import './Blog.css';
 import Posts from './Posts/Posts';
 import NewPost from './NewPost/NewPost';
 // import FullPost from './FullPost/FullPost';
+import asyncComp from '../../hoc/asyncComp';
+
+
+const AysncNewPost = asyncComp(() => import ('./NewPost/NewPost'));
 
 class Blog extends Component {
 
   state = {
-    auth: false
+    auth: true
   }
 
   render () {

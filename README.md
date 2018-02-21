@@ -315,3 +315,41 @@ if you already passed `/new-post` and you are in new-post component then using
   ```
 
 ---
+#### commit : [Tutorial] Loading Routes Lazily
+46. ***Lazy loading*** or ***Code Splitting*** is a technique of loading the required component only when it is required in terms of chunks and hence reducing the bundle.js file size which will be helpful for building more complex bigger applications. This technique will work on react-router 4 & when using create react app.
+
+47. The code splitting will work based on the webpack configuration hence webpack needs to be setup accordingly. This is handled well when using create-react-app for new app creation.
+
+48. Whenever we mention some import in the component/container we are informing webpack to include the dependency in its global bundle.js file while compiling. So we can use dynamic imports to inform webpack not to include that specific import related component in the main bundle insteand create separate chunks that will be loaded when needed. Dynamic imports can be executed using the special function called `import()`, whatever comes between () is imported whenever this function is called. Example,
+
+  ```javascript
+  import AsyncComponent from './hoc/AsyncComponent';
+  const AsyncComponentName = AsyncComponent( () => import ('./ComponentName.js'))
+  ...
+  ...
+  render() { return <Route to='/async-comp' component={AsyncComponentName}}
+  ```
+  > We need to have a function based HOC which should load the component mentioned in the dynamic import whenever that hoc is called.
+
+  ```javascript
+  import React, { Component } from 'react';
+
+  const AsyncComponent = (importComponent) => {   //its function based hoc that takes function as argument, in our case it is dynamic import()
+    return class extends Component {              //it returns an anonymous class based function which will maintain the complete component in its state
+      state = {
+        comp: null
+      }
+      componentDidMount(){                        //It needs to be loaded only after the parent component did mount.
+        importComponent().then(component => {     //Calling the passed dynamic import which will return the component passed on its promise.
+          this.setState(comp: component.default)  //Loading that passed dynamic import component into state.
+        });
+      }
+      render() {
+        const C = this.state.comp
+        return ( C ? <C {...this.props}/> : null);  //If state has component then return that component along with props for render otherwise null.
+      }
+    }
+  }
+  ```
+
+  > Explanation mentioned inline above. Please refer the same.
