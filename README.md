@@ -242,10 +242,17 @@ if you already passed `/new-post` and you are in new-post component then using
 
 >> The best practice it to always have child URL (like '/posts') for each page instead of root '/' URL.
 
-35. The best practice is to dynamically prefix the current path URL that we receive from the params of the parent route in the next Route. Example,
+35. The best practice is to dynamically prefix the current path URL that we receive from the params of the parent route in the nested Route. Example,
 
 ```javascript
 @Posts.js
 
 <Route to={this.path.match.url + ':id'} component={FullPost}
 ```
+
+---
+#### commit : [Tutorial] Creating Dynamic Nested Routes
+36. If we are using the nested route, when initially loading the routed component, the component will get mounted with the data. So if you are trying to navigate to different dynamic nested route (Ex. with different id inside Posts), the component will not get unmount & remount. So the data fetching for the second dynamic click will not work.
+
+37. To make it work, we need to add the data fetching part to componentDidUpdate() method as well so the subsequent dynamic nested routes will work correctly. Remember to ensure checking the loaded post & the post that you are going to loaded are different & then try to fetch, if not you will end up in loop since the state change will trigger the re-render & you will be updating the state with fetched data to maintain it across the page.
+---
