@@ -305,3 +305,13 @@ if you already passed `/new-post` and you are in new-post component then using
   {this.state.auth ? <Route to='/new-post' component={NewPost} : null}
   <Route to='/' component={Posts}
   ```
+---
+#### commit : [Tutorial] Handling the 404 Case (Unknown Routes)
+45. Unknown routes can be handled with Route component by no mentioning the path parameter. However, while using inside switch, Redirect from='/' and this unknown route will not work together since Redirection from / will also catch all unknown routes and redirect it to specific post. Still we can use the Redirection from / to 404 page but very rare use case scenario since / belongs to root which we most of the time plan to redirect to home page. example
+
+  ```javascript
+  <Route component={NotFound}/>
+  <Route render={() => <h1 style={{textAlign: 'center'}}>Page not found or Unauthorized</h1>}/>
+  ```
+
+---
