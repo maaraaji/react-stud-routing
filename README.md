@@ -256,3 +256,14 @@ if you already passed `/new-post` and you are in new-post component then using
 
 37. To make it work, we need to add the data fetching part to componentDidUpdate() method as well so the subsequent dynamic nested routes will work correctly. Remember to ensure checking the loaded post & the post that you are going to loaded are different & then try to fetch, if not you will end up in loop since the state change will trigger the re-render & you will be updating the state with fetched data to maintain it across the page.
 ---
+#### commit : [Tutorial] Redirecting Requests
+38. Redirection is something that you want the user to redirect to specific URL if they load root or other URL.
+
+29. react-router-dom has a separate named exported component called ***Redirect*** which can be implemented inside Switch with From URL & to URL parameters. Example,
+  ```javascript
+  <Switch>
+    <Redirect from='/' to='/posts'/>
+  </Switch>
+  ```
+
+---
