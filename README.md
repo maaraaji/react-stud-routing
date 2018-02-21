@@ -204,7 +204,9 @@ if you already passed `/new-post` and you are in new-post component then using
   import { Switch } from 'react-router-dom';
 
   <Switch>
-    <Route to='/new-post' component={NewPost}/>
+    <Route to='/new-post' exact component={NewPost}/>
     <Route to='/:id' exact component={FullPost}/>
   </Switch>
   ```
+
+---
