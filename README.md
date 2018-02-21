@@ -81,7 +81,7 @@ A descriptive study guide to understanding react routing.
   ```
 
     b. we can use HOC withRouter from react-router-dom and wrap the component that want to learn the route.
-    
+
   ```javascript
   export default withRouter(post)
   ```
@@ -96,11 +96,11 @@ pathname: '/new-post'
 This will result in just appending the pathname to the domain name --> www.example.com/new-post
 
 19. Relative path is the path that appends to the current available path. Example.,
-if you already passed `/new-post` and you are in new-post component then using 
-```javascript
-pathname: this.props.match.url +'/first'
-``` 
---> This will result in www.example.com/new-post/first
+if you already passed `/new-post` and you are in new-post component then using
+  ```javascript
+  pathname: this.props.match.url +'/first'
+  ```
+  > This will result in www.example.com/new-post/first
 
 20. Default is always absolute path.
 ---
@@ -113,8 +113,8 @@ pathname: this.props.match.url +'/first'
 22. Nav link have additional properties of classname & inline styles using which we can style the component.
   ```javascript
   <NavLink to='/'>Home</NavLink>
-  ``` 
-  --> by default it adds the classname active.
+  ```
+  > by default it adds the classname active.
 
 23. to change the default classname, use activeClassName prop and define your own name
   ```javascript
@@ -125,22 +125,73 @@ pathname: this.props.match.url +'/first'
   ```javascript
   <NavLink to='/' activeStyle={{color: 'black', textDecoration: 'none', backgroundColor: 'white'}}>Home<NavLink/>
   ```
-  --> NavLink styles are only active when the link is active.
+  > NavLink styles are only active when the link is active.
+
 ---
 #### commit : [Tutorial] Passing Route Parameters
 25. passing a dynamic parameters on the route can be done using ':' in 'to' as,
   ```javascript
   <Link to={'/'+post.id}><Post></Post></Link>
-  ``` 
-  --> {} at 'to' because it is dynamic
+  ```
+  => {} at 'to' because it is dynamic
+
   ```javascript
   <Route to='/:id' component={FullPost}/>
   ```
   With this, we can pass the dynamic parameter content to the FullPost Component in the name of id.
 ---
 #### commit : [Tutorial] Extracting Route Parameters
-26. Parameter passed to the Route through Link is then passed to the component that route loads as params inside match inside props. We can access the paramter as below,
+26. Parameter passed to the Route through Link is then passed to the component. Those dynamic parameters loads within params inside match inside props. We can access them as below,
   ```javascript
   this.props.match.params.id
   ```
+---
+#### commit : [Tutorial] Parsing Query Parameters & the Fragment
+27. Query & Fragments can be passed to the component through Link's 'to' and can be extracted inside the component props inside location.
+
+28. The Query parameter that got passed will return the same information as it is when extracted, example.
+  ```javascript
+  <Link to={'/?start=5'}>Home</Link>
+
+  or
+
+  <Link to={
+    pathname: '/'
+    search: '?start=5'
+  }>Home</Link>
+  ```
+
+  ```javascript
+  this.props.location.search
+  ```
+  > this will give you `?start=5` but we need key value pairs.
+
+  The key value pairs can be achieved through the vanilla javascript function URLSearchParams.
+
+  ```javascript
+  componentDidMount() {
+    const query = new URLSearchParams(this.props.location.search)
+    for (let param in query.entries()){
+      console.log(param);
+    }
+  }
+  ```
+  > URLSearchParams returns object, which exposes `entries()` method. `entries()` returns a constructor for each in `query` as show above. So this will give ['start', '5']
+
+29. The Fragment can be accessed with hash inside location inside props.
+  ```javascript
+  <Link to={'/#myid'}>Home</Link>
+
+  or
+
+  <Link to={
+    pathname: '/'
+    hash: '#myid'
+  }>Home</Link>
+  ```
+
+  ```javascript
+  this.props.location.hash
+  ```
+  >This will give the hash value
 ---
