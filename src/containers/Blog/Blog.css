@@ -18,7 +18,7 @@
   padding: 15px;
 }
 
-.Blog a:hover, a:active, a.active {
+.Blog nav a:hover, a:active, a.active {
   color: white;
   background-color: #1BA39C;
 }

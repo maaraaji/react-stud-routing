@@ -9,14 +9,15 @@
     border-radius: 3px;
     cursor: pointer;
     background-color: white;
+    height: 100%;
 }
 
 .Post:hover,
 .Post:active {
-    background-color: #C0DDF5;
+    background-color: #16A085;
 }
 
 .Author {
     margin: 16px 0;
-    color: #ccc;
+    color: #bbb;
 }

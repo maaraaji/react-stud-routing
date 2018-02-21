@@ -40,7 +40,7 @@ class Posts extends Component {
     let posts = <p>Something went wrong!</p>
     if (!this.state.error) {
       posts = this.state.posts.map( post => {
-        return <Link to={'/'+post.id} key={post.id}><Post title={post.title} author={post.Author} clicked={ () =>this.showSelectedPostHandler(post.id)}/></Link>
+        return <Link to={'/post/'+post.id} key={post.id}><Post title={post.title} author={post.Author} clicked={ () =>this.showSelectedPostHandler(post.id)}/></Link>
       });
     };
     return (

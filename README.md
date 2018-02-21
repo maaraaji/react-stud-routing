@@ -112,3 +112,6 @@ if you already passed `/new-post` and you are in new-post component then using `
   `<Route to='/:id' component={FullPost}/>`
   With this, we can pass the dynamic parameter content to the FullPost Component in the name of id.
 ---
+#### commit : [Tutorial] Extracting Route Parameters
+26. Parameter passed to the Route through Link is then passed to the component that route loads as params inside match inside props. We can access the paramter as below,
+  `this.props.match.params.id`
