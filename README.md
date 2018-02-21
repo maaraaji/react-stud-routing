@@ -267,3 +267,8 @@ if you already passed `/new-post` and you are in new-post component then using
   ```
 
 ---
+#### commit : [Tutorial] Conditional Redirects
+40. Redirect can be made conditionally so that we can redirect the page after submitting the query or redirect after number of view per page attains.
+
+41. If we are using Redirect outside of Switch, we can only use to='' and not from. Since it is named export of reac-router-dom component, it can be used conditionally just like other components.
+---
