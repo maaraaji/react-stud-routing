@@ -42,21 +42,25 @@ class FullPost extends Component {
   }
 
   render () {
-    console.log('[FullPost.js] In render')
     let post = <div className="FullPost"><p style={{textAlign: 'center'}}>Please select a Post!</p></div>;
-    if (this.props.match.params.id){
+    if (this.props.match.params.id ){
       post = <div className="FullPost"><p style={{textAlign: 'center'}}>Loading...</p></div>;
     }
     if (this.state.loadedPost) {
-      post = (
-        <div className="FullPost">
-            <h1>{this.state.loadedPost.title}</h1>
-            <p>{this.state.loadedPost.body}</p>
-            <div className="Edit">
-                <button onClick={this.deletePostHandler} className="Delete">Delete</button>
-            </div>
-        </div>
-      );
+      if (this.state.loadedPost.id !== +this.props.match.params.id) {
+        post = <div className="FullPost"><p style={{textAlign: 'center'}}>Loading...</p></div>;
+      } else {
+        post = (
+          <div className="FullPost">
+              <h1>{this.state.loadedPost.title}</h1>
+              <p>{this.state.loadedPost.body}</p>
+              <div className="Edit">
+                  <button onClick={this.deletePostHandler} className="Delete">Delete</button>
+              </div>
+          </div>
+        );
+      }
+      console.log('[FullPost.js] In render ' + this.props.match.params.id + ' ' + this.state.loadedPost.id)
     }
     return post;
   }

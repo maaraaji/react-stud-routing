@@ -259,7 +259,7 @@ if you already passed `/new-post` and you are in new-post component then using
 #### commit : [Tutorial] Redirecting Requests
 38. Redirection is something that you want the user to redirect to specific URL if they load root or other URL.
 
-29. react-router-dom has a separate named exported component called ***Redirect*** which can be implemented inside Switch with From URL & to URL parameters. Example,
+39. react-router-dom has a separate named exported component called ***Redirect*** which can be implemented inside Switch with From URL & to URL parameters. Example,
   ```javascript
   <Switch>
     <Redirect from='/' to='/posts'/>
@@ -294,3 +294,14 @@ if you already passed `/new-post` and you are in new-post component then using
   > replace will not keep the previous parent rendered component in history and hence cannot go back to the immediate page using browser back buttons.
 
 ---
+#### commit : [Tutorial] Working with Guards
+44. Guards are nothing but checking the specific items conditionally before loading the specific route component and redirecting it to different route if the conditions are not met. Example below is check if auth state is true before loading the route and if false, it defaults to home page.
+
+  ```javascript
+  state = {
+    auth: false
+  }
+
+  {this.state.auth ? <Route to='/new-post' component={NewPost} : null}
+  <Route to='/' component={Posts}
+  ```
