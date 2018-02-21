@@ -271,4 +271,26 @@ if you already passed `/new-post` and you are in new-post component then using
 40. Redirect can be made conditionally so that we can redirect the page after submitting the query or redirect after number of view per page attains.
 
 41. If we are using Redirect outside of Switch, we can only use to='' and not from. Since it is named export of reac-router-dom component, it can be used conditionally just like other components.
+
+42. Redirection will not keep the submitted page in history and hence you cannot go back to that page using back button in the browser.
+---
+#### commit : [Tutorial] Using the History Prop to Redirect (Replace)
+42. Instead of using Redirect component from react-router-dom, we can use the objects in history props (push or replace) from Route component for redirection. Using this there no need to render for redirection.
+
+  ```javascript
+  axios.post('url', data).then (response => {
+    this.props.history.push('/posts')
+  })
+  ```
+  > push will keep the previous parent rendered component in history and hence can go back to the previous page using browser back button.
+
+43. Using replace we can implement the same Redirect functionality where we cannot go back to the rendered component which redirects it to different page using the render triggered on the conditional redirection
+
+  ```javascript
+  axios.post('url', data).then (response => {
+    this.props.history.replace('/posts')
+  })
+  ```
+  > replace will not keep the previous parent rendered component in history and hence cannot go back to the immediate page using browser back buttons.
+
 ---
