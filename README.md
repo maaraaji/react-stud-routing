@@ -210,3 +210,19 @@ if you already passed `/new-post` and you are in new-post component then using
   ```
 
 ---
+#### commit : [Tutorial] Navigating Programmatically
+32. Using ***Link*** is absolutely fine for navigation however, if you want to navigate not immediately after clicking but only after getting the response for the request that we sent with that click? or Link usually generates anchor tag which by default listens clicks so if you want to use the clicked property?
+
+33. We can use push prop inside history inside the prop passed and by given push the path to navigate. Example,
+  ```javascript
+  clickHandler = ( id ) => {
+    this.props.history.push('/' + id);
+
+    or
+
+    this.props.history.push({pathname: '/' + id});
+  }
+  <Post clicked={this.clickHanler(props.id)}/>
+  ```
+
+---
