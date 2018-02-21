@@ -4,7 +4,7 @@
   padding: 0;
   width: 100%;
   text-align: center;
-  background-color: #c8c5c5;
+  background-color: #65C6BB;
 }
 
 .Blog li {
@@ -20,5 +20,9 @@
 
 .Blog a:hover, a:active, a.active {
   color: white;
-  background-color: black;
+  background-color: #1BA39C;
+}
+
+.Blog {
+  height: 100%;
 }

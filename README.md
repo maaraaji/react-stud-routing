@@ -106,3 +106,9 @@ if you already passed `/new-post` and you are in new-post component then using `
   `<NavLink to='/' activeStyle={{color: 'black', textDecoration: 'none', backgroundColor: 'white'}}>Home<NavLink/>`
   NavLink styles are only active when the link is active.
 ---
+#### commit : [Tutorial] Passing Route Parameters
+25. passing a dynamic parameters on the route can be done using ':' in 'to' as,
+  `<Link to={'/'+post.id}><Post></Post></Link>` --> {} at 'to' because it is dynamic
+  `<Route to='/:id' component={FullPost}/>`
+  With this, we can pass the dynamic parameter content to the FullPost Component in the name of id.
+---
