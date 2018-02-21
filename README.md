@@ -1,5 +1,5 @@
-A descriptive study guide to understanding react routing.
-
+### A descriptive study guide to understanding react routing.
+---
 | **InitialSetup** |
 | --- |
 |Pre-configured sample blog application|
@@ -193,5 +193,18 @@ if you already passed `/new-post` and you are in new-post component then using
   ```javascript
   this.props.location.hash
   ```
-  >This will give the hash value
+  >This will give the hash value, predominantly the ID of the Element.
+
 ---
+#### commit : [Tutorial] Using Switch to Load a Single Route
+30. If there are multiple routes pretending to be matching for the single link, then we can use switch to load only one route that matches first and ignore the subsequent routes.
+
+31. Switch component is the named export inside react-router-dom. We need to import switch and wrap the routes that you want inside switch.
+  ```javascript
+  import { Switch } from 'react-router-dom';
+
+  <Switch>
+    <Route to='/new-post' component={NewPost}/>
+    <Route to='/:id' exact component={FullPost}/>
+  </Switch>
+  ```

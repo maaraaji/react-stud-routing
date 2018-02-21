@@ -2,9 +2,10 @@
     width: 80%;
     margin: 20px auto;
     border: 1px solid #eee;
-    box-shadow: 0 2px 3px #ccc;
+    box-shadow: 0 0px 3px #777;
+    border-radius: 3px;
     text-align: center;
-    background-color: white;
+    background-color: #78bcd6;
 }
 
 .NewPost label {
@@ -30,14 +31,14 @@
     margin: 5px 0;
     padding: 10px;
     font: inherit;
-    border: 1px solid #fa923f;
-    background-color: transparent;
-    color: #fa923f;
+    border: 1px solid #000000;
+    background-color: #white;
+    color: #02506e;
     cursor: pointer;
 }
 
 .NewPost button:hover,
 .NewPost button:active {
     color: white;
-    background-color: #fa923f;
+    background-color: #1BA39C;
 }

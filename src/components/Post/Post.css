@@ -10,14 +10,16 @@
     cursor: pointer;
     background-color: white;
     height: 100%;
+    border: 1px solid #fff;
 }
 
 .Post:hover,
 .Post:active {
-    background-color: #16A085;
+    background-color: #78bcd6;
+    border: 1px solid #eee;
 }
 
 .Author {
     margin: 16px 0;
-    color: #bbb;
+    color: #777;
 }

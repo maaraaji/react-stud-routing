@@ -20,7 +20,7 @@ class Posts extends Component {
           Author : 'Maanikkam'
         }
       });
-      // console.log(updatedPosts);
+      console.log(updatedPosts);
       this.setState({
         posts: updatedPosts
       })
