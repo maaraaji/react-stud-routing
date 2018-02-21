@@ -33,10 +33,10 @@ class FullPost extends Component {
   }
 
   render () {
-    console.log('In render')
-    let post = <p style={{textAlign: 'center'}}>Please select a Post!</p>;
+    console.log('[FullPost.js] In render')
+    let post = <div className="FullPost"><p style={{textAlign: 'center'}}>Please select a Post!</p></div>;
     if (this.props.match.params.id){
-      post = <p style={{textAlign: 'center'}}>Loading...</p>;
+      post = <div className="FullPost"><p style={{textAlign: 'center'}}>Loading...</p></div>;
     }
     if (this.state.loadedPost) {
       post = (

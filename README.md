@@ -226,3 +226,26 @@ if you already passed `/new-post` and you are in new-post component then using
   ```
 
 ---
+#### commit : [Tutorial] Understanding Nested Routes
+34. Routes can be nested inside the component that we are passing through the route in the parent component. Example.,
+```javascript
+@Blog.js
+
+<Route to='/' component={Posts}/>
+
+@Posts.js
+
+<Route to='/:id' component={FullPost}/>
+```
+
+>So that the Posts component and FullPost component will get rendered in the Blog component in single page since '/:id' will have match at "/"
+
+>> The best practice it to always have child URL (like '/posts') for each page instead of root '/' URL.
+
+35. The best practice is to dynamically prefix the current path URL that we receive from the params of the parent route in the next Route. Example,
+
+```javascript
+@Posts.js
+
+<Route to={this.path.match.url + ':id'} component={FullPost}
+```
