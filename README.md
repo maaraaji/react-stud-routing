@@ -75,43 +75,72 @@ A descriptive study guide to understanding react routing.
 16. To get the route information (props) in the component loaded inside routed container, there are two ways
 
     a. while calling the component, pass the props using spread operetor or pass a prop which match specific prop from router
-  `<Post {...props}/>`
-  `<Post {path = this.props.pathname}/>`
+  ```javascript
+  <Post {...props}/>
+  <Post {path = this.props.pathname}/>
+  ```
 
     b. we can use HOC withRouter from react-router-dom and wrap the component that want to learn the route.
-  `export default withRouter(post)`
+    
+  ```javascript
+  export default withRouter(post)
+  ```
 
 17. This will be helpful to understand the route history (as history is one of the props) and pushing back and forward.
 ---
 #### commit : [Tutorial] Absolute vs Relative Paths
 18. Absolute path is the path always attach just to the domain name. Example.,
-`pathname: '/new-post'` --> This will result in just appending the pathname to the domain name --> www.example.com/new-post
+```javascript
+pathname: '/new-post'
+```
+This will result in just appending the pathname to the domain name --> www.example.com/new-post
 
 19. Relative path is the path that appends to the current available path. Example.,
-if you already passed `/new-post` and you are in new-post component then using `pathname: this.props.match.url +'/first'` --> This will result in www.example.com/new-post/first
+if you already passed `/new-post` and you are in new-post component then using 
+```javascript
+pathname: this.props.match.url +'/first'
+``` 
+--> This will result in www.example.com/new-post/first
 
 20. Default is always absolute path.
 ---
 #### commit : [Tutorial] Styling the Active Route
 21. To style the link/route which is active, use NavLink named export instead of Link from react-router-dom.
-  `import { NavLink } from 'react-router-dom'`
+  ```javascript
+  import { NavLink } from 'react-router-dom'
+  ```
 
 22. Nav link have additional properties of classname & inline styles using which we can style the component.
-  `<NavLink to='/'>Home</NavLink>` - by default it adds the classname active.
+  ```javascript
+  <NavLink to='/'>Home</NavLink>
+  ``` 
+  --> by default it adds the classname active.
 
 23. to change the default classname, use activeClassName prop and define your own name
-  `<NavLink to='/' activeClassName='my-active'>Home<NavLink/>`
+  ```javascript
+  <NavLink to='/' activeClassName='my-active'>Home<NavLink/>
+  ```
 
 24. to use inline style use activeStyle prop which is a dynamic content & JSObject hence within {{}}
-  `<NavLink to='/' activeStyle={{color: 'black', textDecoration: 'none', backgroundColor: 'white'}}>Home<NavLink/>`
-  NavLink styles are only active when the link is active.
+  ```javascript
+  <NavLink to='/' activeStyle={{color: 'black', textDecoration: 'none', backgroundColor: 'white'}}>Home<NavLink/>
+  ```
+  --> NavLink styles are only active when the link is active.
 ---
 #### commit : [Tutorial] Passing Route Parameters
 25. passing a dynamic parameters on the route can be done using ':' in 'to' as,
-  `<Link to={'/'+post.id}><Post></Post></Link>` --> {} at 'to' because it is dynamic
-  `<Route to='/:id' component={FullPost}/>`
+  ```javascript
+  <Link to={'/'+post.id}><Post></Post></Link>
+  ``` 
+  --> {} at 'to' because it is dynamic
+  ```javascript
+  <Route to='/:id' component={FullPost}/>
+  ```
   With this, we can pass the dynamic parameter content to the FullPost Component in the name of id.
 ---
 #### commit : [Tutorial] Extracting Route Parameters
 26. Parameter passed to the Route through Link is then passed to the component that route loads as params inside match inside props. We can access the paramter as below,
-  `this.props.match.params.id`
+  ```javascript
+  this.props.match.params.id
+  ```
+---
