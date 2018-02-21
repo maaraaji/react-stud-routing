@@ -4,20 +4,21 @@
   padding: 0;
   width: 100%;
   text-align: center;
+  background-color: #c8c5c5;
 }
 
 .Blog li {
   display: inline-block;
-  margin: 20px 0px;
+  margin: 15px 0px;
 }
 
 .Blog a {
   text-decoration: none;
   color: black;
-  padding: 20px;
+  padding: 15px;
 }
 
-.Blog a:hover, a:active {
+.Blog a:hover, a:active, a.active {
   color: white;
   background-color: black;
 }

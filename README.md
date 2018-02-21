@@ -85,7 +85,24 @@ A descriptive study guide to understanding react routing.
 ---
 #### commit : [Tutorial] Absolute vs Relative Paths
 18. Absolute path is the path always attach just to the domain name. Example.,
-`pathname: '/new-post'` --> This will always appends to www.example.com/new-post
+`pathname: '/new-post'` --> This will result in just appending the pathname to the domain name --> www.example.com/new-post
 
 19. Relative path is the path that appends to the current available path. Example.,
-if you already passed `/new-post` and you are in new-post component then use `pathname: this.props.match.url +'/first'` --> This will result in www.example.com/new-post/first
+if you already passed `/new-post` and you are in new-post component then using `pathname: this.props.match.url +'/first'` --> This will result in www.example.com/new-post/first
+
+20. Default is always absolute path.
+---
+#### commit : [Tutorial] Styling the Active Route
+21. To style the link/route which is active, use NavLink named export instead of Link from react-router-dom.
+  `import { NavLink } from 'react-router-dom'`
+
+22. Nav link have additional properties of classname & inline styles using which we can style the component.
+  `<NavLink to='/'>Home</NavLink>` - by default it adds the classname active.
+
+23. to change the default classname, use activeClassName prop and define your own name
+  `<NavLink to='/' activeClassName='my-active'>Home<NavLink/>`
+
+24. to use inline style use activeStyle prop which is a dynamic content & JSObject hence within {{}}
+  `<NavLink to='/' activeStyle={{color: 'black', textDecoration: 'none', backgroundColor: 'white'}}>Home<NavLink/>`
+  NavLink styles are only active when the link is active.
+---
