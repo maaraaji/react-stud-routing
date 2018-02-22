@@ -295,7 +295,7 @@ if you already passed `/new-post` and you are in new-post component then using
 
 ---
 #### commit : [Tutorial] Working with Guards
-44. Guards are nothing but checking the specific items conditionally before loading the specific route component and redirecting it to different route if the conditions are not met. Example below is check if auth state is true before loading the route and if false, it defaults to home page.
+44. Guards are nothing but checking the specific items conditionally before loading the specific route component and redirecting it to different route if the conditions are not met. Example below checks if auth state is true before loading the route and if false, it defaults to home page.
 
   ```javascript
   state = {
@@ -303,7 +303,7 @@ if you already passed `/new-post` and you are in new-post component then using
   }
 
   {this.state.auth ? <Route to='/new-post' component={NewPost} : null}
-  <Route to='/' component={Posts}
+  <Route to='/' component={Posts}/>
   ```
 ---
 #### commit : [Tutorial] Handling the 404 Case (Unknown Routes)
@@ -353,3 +353,9 @@ if you already passed `/new-post` and you are in new-post component then using
   ```
 
   > Explanation mentioned inline above. Please refer the same.
+---
+#### commit : [Tutorial] Routing and Server Deployment
+
+![Routing and Server Deployment](Routing_Server_Deployment.svg)
+
+---
