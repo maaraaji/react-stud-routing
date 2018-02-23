@@ -72,16 +72,15 @@
 15. Need to import the named export ***Link*** from react-router-dom package.
 ---
 #### commit : [Tutorial]  The "withRouter" HOC & Route Props
-16. To get the route information (props) in the component loaded inside routed container, there are two ways
+16. The special router specific props are passed only to the direct component loaded through the Route. To get the route information (props) in the nested component loaded inside routed parent component, there are two ways
 
-    a. while calling the component, pass the props using spread operetor or pass a prop which match specific prop from router
+  > While calling the component, pass the props using spread operetor or pass a prop which match specific prop from router
   ```javascript
   <Post {...props}/>
   <Post {path = this.props.pathname}/>
   ```
-
-    b. we can use HOC withRouter from react-router-dom and wrap the component that want to learn the route.
-
+  
+  > We can use HOC withRouter from react-router-dom and wrap the component that want to learn the route.
   ```javascript
   export default withRouter(post)
   ```

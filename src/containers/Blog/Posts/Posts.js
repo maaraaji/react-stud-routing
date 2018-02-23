@@ -3,7 +3,7 @@ import axios from '../../../axios';
 import Post from '../../../components/Post/Post';
 import FullPost from '../FullPost/FullPost';
 import './Posts.css';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 class Posts extends Component {
 
@@ -48,9 +48,10 @@ class Posts extends Component {
     if (!this.state.error) {
       posts = this.state.posts.map( post => {
         return (
-            // <Link to={'/'+post.id} key={post.id}>
-            <Post key={post.id} title={post.title} author={post.Author} clicked={ () =>this.showSelectedPostHandler(post.id)}/>
-            // </Link>
+            <Link to={this.props.match.url + '/'+post.id} key={post.id}>
+            {/*<Post key={post.id} title={post.title} author={post.Author} clicked={ () =>this.showSelectedPostHandler(post.id)}/>*/}
+            <Post key={post.id} title={post.title} author={post.Author}/>
+            </Link>
 
 
         )

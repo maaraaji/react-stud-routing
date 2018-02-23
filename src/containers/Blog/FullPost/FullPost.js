@@ -11,12 +11,12 @@ class FullPost extends Component {
   }
 
   componentDidMount() {
-    console.log("ComponentDidMount()")
+    console.log("[FullPost.js] ComponentDidMount()")
     this.loadData();
   }
 
   componentDidUpdate() {
-    console.log("ComponentDidUpdate()")
+    console.log("[FullPost.js] ComponentDidUpdate()")
     this.loadData();
   }
 
@@ -42,6 +42,7 @@ class FullPost extends Component {
   }
 
   render () {
+    console.log("[FullPost.js] render()")
     let post = <div className="FullPost"><p style={{textAlign: 'center'}}>Please select a Post!</p></div>;
     if (this.props.match.params.id ){
       post = <div className="FullPost"><p style={{textAlign: 'center'}}>Loading...</p></div>;
